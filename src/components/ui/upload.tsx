@@ -43,10 +43,10 @@ export function UploadModal({
     <Card className="w-full rounded-none border-none mx-auto shadow-none">
       <CardHeader className="border-b pb-4 px-0">
         <CardTitle className="md:text-xl text-lg font-semibold text-emerald-500">
-          Upload Modal Images
+          Upload Resume
         </CardTitle>
         <CardDescription className="text-xs text-muted-foreground">
-          Supports multiple images upload
+          Supports PDF/Docs Resume upload
         </CardDescription>
       </CardHeader>
       <CardContent className="pt-6 px-0">
@@ -78,33 +78,32 @@ export function UploadModal({
                 <span className="font-medium">Drag and drop files here</span> or
               </p>
               <Button
-              variant="outline"
-              size="lg"
-              onClick={() => {
-                const input = document.createElement("input");
-                input.type = "file";
-                input.accept = "application/pdf"; // Allow only PDF files
-                input.multiple = false; // Allow only one file at a time
-                input.onchange = async () => {
-                  if (input.files?.length) {
-                    const file = input.files[0];
+                variant="outline"
+                size="lg"
+                onClick={() => {
+                  const input = document.createElement("input");
+                  input.type = "file";
+                  input.accept = "application/pdf"; // Allow only PDF files
+                  input.multiple = false; // Allow only one file at a time
+                  input.onchange = async () => {
+                    if (input.files?.length) {
+                      const file = input.files[0];
 
-                    // Ensure only PDFs are uploaded
-                    if (file.type !== "application/pdf") {
-                      toast.error("Only PDF files are supported.");
-                      return;
+                      // Ensure only PDFs are uploaded
+                      if (file.type !== "application/pdf") {
+                        toast.error("Only PDF files are supported.");
+                        return;
+                      }
+
+                      await handleUpload([file]);
                     }
-
-                    await handleUpload([file]);
-                  }
-                };
-                input.click();
-              }}
-            >
-              Browse Files
-            </Button>
-            <p className="text-xs text-neutral-500">Supported format: PDF</p>
-
+                  };
+                  input.click();
+                }}
+              >
+                Browse Files
+              </Button>
+              <p className="text-xs text-neutral-500">Supported format: PDF</p>
             </div>
           )}
         </div>

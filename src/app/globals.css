@@ -43,7 +43,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-*,
+
 ::before,
 ::after{
   box-sizing: border-box;
@@ -55,19 +55,7 @@ label{
   font-size: 20px;
 }
 
-html,
-body{
-  height: 100%;
-  width: 100%;
-}
-
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container{
+.containerinit{
   padding: 32px 48px;
   border-radius: 10px;
   width: 100%;
@@ -75,21 +63,21 @@ body{
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }
 
-.container > h1{
+.containerinit > h1{
   margin-bottom: 20px;
 }
 
-.container > form{
+.containerinit > form{
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.container div{
+.containerinit div{
   display: flex;
   flex-direction: column;
 }
 
-.container input{
+.containerinit input{
   width: 100%;
   font-size: 20px;
   padding: 10px;
@@ -98,17 +86,12 @@ body{
   border-bottom: 1px solid black;
 }
 
-.container input::placeholder{
+.containerinit input::placeholder{
   font-size: 12px;
   font-style: italic;
 }
 
 button{
-  background-color: rgb(0, 212, 0);
-  border: none;
-  font-size: 20px;
-  color: white;
-  border-radius: 5px;
   padding: 10px;
   cursor: pointer;
   margin: 10px 0;
