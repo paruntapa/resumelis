@@ -1,7 +1,6 @@
 import express, { type Request, type Response } from "express";
 import cors from "cors";
 import AuthRouter from "./routes/AuthRouter";
-import ensureAuthenticated from "./middleware/Auth";
 import * as pdfjs from "pdfjs-dist";
 import {
   S3Client,
@@ -18,6 +17,7 @@ import UserModel from "./models/User";
 import type { Types } from "mongoose";
 import mongoose from "mongoose";
 import connectDB from "./models/db";
+import ensureAuthenticated from "./middleware/Auth";
 
 const s3 = new S3Client({
   region: process.env.AWS_REGION,
