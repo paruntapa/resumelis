@@ -17,7 +17,7 @@ import UserModel from "./models/User";
 import type { Types } from "mongoose";
 import mongoose from "mongoose";
 import connectDB from "./models/db";
-import ensureAuthenticated from "./middleware/Auth";
+import ensureAuthenticated from "./Middleware/Auth";
 
 const s3 = new S3Client({
   region: process.env.AWS_REGION,
