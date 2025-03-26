@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start:web": "bun run start",
+    "start:backend": "cd src/backend && bun run index.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",
