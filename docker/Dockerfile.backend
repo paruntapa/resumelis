@@ -2,11 +2,10 @@ FROM oven/bun:1
 
 WORKDIR /app
 
-COPY ./package.json ./package.json
-COPY ./bun.lock ./bun.lock
+# Copy everything except node_modules
+COPY . .
 
-COPY ./src/backend ./src/backend
-
+# Install dependencies
 RUN bun install
 
 EXPOSE 8080
